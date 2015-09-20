@@ -12,6 +12,9 @@ class FizzBuzz:
 
 		if number%5 == 0:
 			return "buzz"
+		
+		if '7' in str(number):
+			return "GitHub"
 
 		else:
 			return number
