@@ -19,6 +19,7 @@ class FizzBuzz:
 if __name__=='__main__':
 
 	fb = FizzBuzz()
-	print "Result : %s" % fb.calculate(15)
+	for n in range(1,20):
+		print "Result : %d -> %s" % ( n, fb.calculate(n) )
 
 
