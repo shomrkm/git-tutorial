@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 
+import unittest
+
 
 class FizzBuzz:
 
@@ -12,14 +14,27 @@ class FizzBuzz:
 
 		if number%5 == 0:
 			return "buzz"
+              
+		if '7' in str(number):
+			return "GitHub"
 
 		else:
 			return number
 
-if __name__=='__main__':
 
-	fb = FizzBuzz()
-	for n in range(1,20):
-		print "Result : %d -> %s" % ( n, fb.calculate(n) )
+class TestFizzBuzz(unittest.TestCase):
+
+	def test_calculate(self):
+
+		fb = FizzBuzz()
+		self.assertEqual(fb.calculate(1)  ,1)
+		self.assertEqual(fb.calculate(3)  ,"fizz")
+		self.assertEqual(fb.calculate(5)  ,"buzz")
+		self.assertEqual(fb.calculate(15) ,"fizzbuzz")
+		self.assertEqual(fb.calculate(17) ,"GitHub")
+
+
+if __name__=='__main__':
+	unittest.main()
 
 
